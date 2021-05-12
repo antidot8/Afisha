@@ -6,6 +6,13 @@ public class AfishaManager {
     private MovieItem[] movies = new MovieItem[0];
     private int maxShow = 10;
 
+    public AfishaManager() {
+    }
+
+    public AfishaManager(int maxShow) {
+        this.maxShow = maxShow;
+    }
+
     public void add(MovieItem item) {
         int length = movies.length + 1;
         MovieItem[] onScreen = new MovieItem[length];

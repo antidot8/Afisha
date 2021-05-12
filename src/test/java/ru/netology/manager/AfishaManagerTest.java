@@ -65,4 +65,14 @@ public class AfishaManagerTest {
         MovieItem[] expected = new MovieItem[0];
         assertArrayEquals(expected, manager.getAll());
     }
+
+    @Test
+    public void showMovieIfChangeLimit() {
+        AfishaManager manager = new AfishaManager(3);
+        MovieItem[] expected = new MovieItem[]{movie3, movie2, movie1};
+        manager.add(movie1);
+        manager.add(movie2);
+        manager.add(movie3);
+        assertArrayEquals(expected, manager.getAll());
+    }
 }

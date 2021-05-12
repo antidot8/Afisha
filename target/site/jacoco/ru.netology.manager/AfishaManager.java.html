@@ -2,30 +2,37 @@
 
 import ru.netology.domain.MovieItem;
 
-<span class="fc" id="L5">public class AfishaManager {</span>
+public class AfishaManager {
 <span class="fc" id="L6">    private MovieItem[] movies = new MovieItem[0];</span>
 <span class="fc" id="L7">    private int maxShow = 10;</span>
 
+<span class="fc" id="L9">    public AfishaManager() {</span>
+<span class="fc" id="L10">    }</span>
+
+<span class="fc" id="L12">    public AfishaManager(int maxShow) {</span>
+<span class="fc" id="L13">        this.maxShow = maxShow;</span>
+<span class="fc" id="L14">    }</span>
+
     public void add(MovieItem item) {
-<span class="fc" id="L10">        int length = movies.length + 1;</span>
-<span class="fc" id="L11">        MovieItem[] onScreen = new MovieItem[length];</span>
-<span class="fc" id="L12">        System.arraycopy(movies, 0, onScreen, 0, movies.length);</span>
-<span class="fc" id="L13">        int lastIndex = onScreen.length - 1;</span>
-<span class="fc" id="L14">        onScreen[lastIndex] = item;</span>
-<span class="fc" id="L15">        movies = onScreen;</span>
-<span class="fc" id="L16">    }</span>
+<span class="fc" id="L17">        int length = movies.length + 1;</span>
+<span class="fc" id="L18">        MovieItem[] onScreen = new MovieItem[length];</span>
+<span class="fc" id="L19">        System.arraycopy(movies, 0, onScreen, 0, movies.length);</span>
+<span class="fc" id="L20">        int lastIndex = onScreen.length - 1;</span>
+<span class="fc" id="L21">        onScreen[lastIndex] = item;</span>
+<span class="fc" id="L22">        movies = onScreen;</span>
+<span class="fc" id="L23">    }</span>
 
     public MovieItem[] getAll() {
-<span class="fc" id="L19">        int lengthResult = maxShow;</span>
-<span class="fc bfc" id="L20" title="All 2 branches covered.">        if (movies.length &lt; maxShow) {</span>
-<span class="fc" id="L21">            lengthResult = movies.length;</span>
+<span class="fc" id="L26">        int lengthResult = maxShow;</span>
+<span class="fc bfc" id="L27" title="All 2 branches covered.">        if (movies.length &lt; maxShow) {</span>
+<span class="fc" id="L28">            lengthResult = movies.length;</span>
         }
-<span class="fc" id="L23">        MovieItem[] result = new MovieItem[lengthResult];</span>
-<span class="fc bfc" id="L24" title="All 2 branches covered.">        for (int i = 0; i &lt; result.length; i++) {</span>
-<span class="fc" id="L25">            int index = movies.length - i - 1;</span>
-<span class="fc" id="L26">            result[i] = movies[index];</span>
+<span class="fc" id="L30">        MovieItem[] result = new MovieItem[lengthResult];</span>
+<span class="fc bfc" id="L31" title="All 2 branches covered.">        for (int i = 0; i &lt; result.length; i++) {</span>
+<span class="fc" id="L32">            int index = movies.length - i - 1;</span>
+<span class="fc" id="L33">            result[i] = movies[index];</span>
         }
-<span class="fc" id="L28">        return result;</span>
+<span class="fc" id="L35">        return result;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
